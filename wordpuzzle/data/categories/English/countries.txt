@@ -1,0 +1,185 @@
+zimbabwe
+zambia
+uganda
+tunisia
+togo
+tanzania
+swaziland
+sudan
+south africa
+somalia
+sierra leone
+seychelles
+senegal
+rwanda
+nigeria
+niger
+namibia
+mozambique
+morocco
+mauritius
+mauritania
+mali
+malawi
+madagascar
+libya
+liberia
+lesotho
+kenya
+guinea
+ghana
+gambia, the
+gabon
+ethiopia
+eritrea
+equatorial guinea
+egypt
+djibouti
+chad
+comoros
+cape verde
+cameroon
+burundi
+burkina faso
+botswana
+benin
+angola
+algeria
+united kingdom
+ukraine
+switzerland
+sweden
+spain
+slovenia
+slovakia
+san marino
+russia
+romania
+portugal
+poland
+norway
+netherlands
+monaco
+moldova
+malta
+luxembourg
+lithuania
+liechtenstein
+latvia
+italy
+ireland
+iceland
+hungary
+greece
+germany
+france
+finland
+estonia
+denmark
+czech republic
+croatia
+bulgaria
+belgium
+belarus
+austria
+andorra
+albania
+yemen
+vietnam
+uzbekistan
+united arab emirates
+thailand
+turkmenistan
+turkey
+timor-leste
+tajikistan
+syria
+state of palestine
+sri lanka
+south korea
+singapore
+saudi arabia
+qatar
+philippines
+pakistan
+oman
+north korea
+nepal
+myanmar
+mongolia
+maldives
+malaysia
+lebanon
+laos
+kyrgyzstan
+kuwait
+kazakhstan
+jordan
+japan
+israel
+iraq
+iran
+indonesia
+india
+georgia
+china
+cyprus
+cambodia
+brunei
+bhutan
+bangladesh
+bahrain
+azerbaijan
+armenia
+afghanistan
+vanuatu
+tuvalu
+tonga
+solomon islands
+samoa
+papua new guinea
+palau
+new zealand
+nauru
+marshall islands
+kiribati
+fiji
+australia
+argentina
+bolivia
+brazil
+chile
+colombia
+ecuador
+guyana
+paraguay
+peru
+suriname
+uruguay
+venezuela
+united states
+panama
+nicaragua
+mexico
+jamaica
+honduras
+haiti
+guatemala
+grenada
+el salvador
+dominican republic
+dominica
+cuba
+costa rica
+canada
+bermuda
+belize
+barbados
+bahamas
+panama
+nicaragua
+hondurasa
+guatemala
+el salvador
+costa rica
+belize

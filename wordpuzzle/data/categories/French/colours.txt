@@ -1,0 +1,31 @@
+blanc
+Jaune
+bleu
+rouge
+vert
+noir
+marron
+Azur
+Ivoire
+sarcelle
+argent
+violet
+bleu marin
+vert pois
+gris
+Orange
+bordeaux
+charbon
+bleu vert
+corail
+fuchsia
+blé
+citron vert
+cramoisi
+kaki
+rose vif
+magenta
+doré
+prune
+olive
+cyan

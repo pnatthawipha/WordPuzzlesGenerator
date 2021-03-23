@@ -1,0 +1,20 @@
+nonagon
+Ottagono
+ettagono
+esagono
+triangolo
+triangolo scaleno
+triangolo rettangolo
+parallelogramma
+rombo
+piazza
+pentagono
+cerchio
+ovale
+cuore
+attraversare
+freccia
+cubo
+cilindro
+stella
+mezzaluna

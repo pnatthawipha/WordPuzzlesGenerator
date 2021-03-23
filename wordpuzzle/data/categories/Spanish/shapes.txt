@@ -1,0 +1,20 @@
+nonágono
+octágono
+heptágono
+hexágono
+triángulo
+triángulo escaleno
+triángulo rectángulo
+paralelogramo
+rombo
+cuadrado
+pentágono
+circulo
+oval
+corazón
+cruzar
+flecha
+cubo
+cilindro
+estrella
+creciente

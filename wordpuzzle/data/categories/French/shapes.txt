@@ -1,0 +1,20 @@
+nonagon
+octogone
+heptagone
+hexagone
+Triangle
+triangle scalène
+triangle rectangle
+parallélogramme
+rhombe
+carré
+Pentagone
+cercle
+ovale
+cœur
+traverser
+La Flèche
+cube
+cylindre
+étoile
+croissant

@@ -1,0 +1,31 @@
+blanco
+amarillo
+azul
+rojo
+verde
+negro
+marrón
+azur
+Marfil
+verde azulado
+plata
+púrpura
+Azul marino
+verde claro
+gris
+Naranja
+granate
+carbón
+aguamarina
+coral
+fucsia
+trigo
+Lima
+carmesí
+caqui
+Rosa caliente
+magenta
+dorado
+ciruela
+aceituna
+cian

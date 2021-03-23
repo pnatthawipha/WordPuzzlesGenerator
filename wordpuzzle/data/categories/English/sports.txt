@@ -1,0 +1,47 @@
+archery
+badminton
+cricket
+bowling
+boxing
+curling
+tennis
+skateboarding
+surfing
+hockey
+figure skating
+yoga
+fencing
+fitness
+gymnastics
+karate
+volleyball
+weightlifting
+basketball
+baseball
+rugby
+wrestling
+high jumping
+hang gliding
+car racing
+cycling
+running
+table tennis
+fishing
+judo
+climbing
+billiards
+shooting
+horse racing
+horseback riding
+golf
+football
+skydiving
+skiing
+scuba diving
+water skiing
+skateboarding
+rock climbing
+mountain biking
+paragliding
+mountaineering
+bungee jumping

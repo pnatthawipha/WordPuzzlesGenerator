@@ -1,0 +1,38 @@
+tulip
+daffodil
+poppy
+sunflower
+bluebell
+rose
+snowdrop
+cherry blossom
+orchid
+iris
+peony
+chrysanthemum
+geranium
+lily
+lotus
+water lily
+dandelion
+hyacinth
+daisy
+crocus
+wildflower
+thistle
+flower
+herb
+mushroom
+weed
+fern
+cattail
+reed
+bamboo
+ivy
+shrub
+moss
+grass
+palm tree
+bush
+corn
+tree
