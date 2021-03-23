@@ -1,5 +1,6 @@
 import random
 import PySimpleGUI as sg
+import networkx as nx
 
 from wordladder.graph import WordLadder
 from wordsearch.generategrid import generate_word_search
@@ -18,7 +19,7 @@ BOX_PAD = 2.5
 def create_grid(win3, grid, wordsearch_dictionary):
     sizes = wordsearch_dictionary['grid_size'].split('x')
 
-    g = win3['_wsgraph_']
+    g = win3['-WSGRAPH-']
     for row in range(int(sizes[0])):
         for col in range(int(sizes[1])):
             g.draw_rectangle((col * BOX_SIZE + BOX_PAD, row * BOX_SIZE + BOX_PAD),
@@ -29,7 +30,7 @@ def create_grid(win3, grid, wordsearch_dictionary):
 
 
 def find_word(win3, grid, start_i, start_j, end_i, end_j):
-    g = win3['_wsgraph_']
+    g = win3['-WSGRAPH-']
     colour = random.choice(COLOURS)
     for row in range(start_i, end_i + 1):
         for col in range(start_j, end_j + 1):
@@ -42,7 +43,7 @@ def find_word(win3, grid, start_i, start_j, end_i, end_j):
 
 def find_word_di(win3, grid, start_i, start_j, word):
     word = list(word)
-    g = win3['_wsgraph_']
+    g = win3['-WSGRAPH-']
     colour = random.choice(COLOURS)
     
     i, j, found = grid.check_avail_di_left_down(start_i, start_j, word, False)
@@ -91,37 +92,43 @@ def find_word_di(win3, grid, start_i, start_j, word):
             
 def get_word_search_gen_layout():
     layout = [[sg.Text('Select Language')],
-              [sg.Combo(LANGUAGES, auto_size_text=True, default_value=LANGUAGES[0], enable_events=True, key='wslanguage')],
+              [sg.Combo(LANGUAGES, auto_size_text=True, default_value=LANGUAGES[0], enable_events=True, key='-WSLANGUAGE-')],
               [sg.Text('Select Category')],
-              [sg.Combo(CATEGORIES, auto_size_text=True, default_value=CATEGORIES[0], enable_events=True, key='wscategory')],
+              [sg.Combo(CATEGORIES, auto_size_text=True, default_value=CATEGORIES[0], enable_events=True, key='-WSCATEGORY-')],
               [sg.Text('Enter Grid Size')],
-              [sg.Combo(GRID_SIZE, auto_size_text=True, default_value=GRID_SIZE[0], enable_events=True, key='wsgridsize')],
+              [sg.Combo(GRID_SIZE, auto_size_text=True, default_value=GRID_SIZE[0], enable_events=True, key='-WSGRIDSIZE-')],
               [sg.Button('SUBMIT')],
               [sg.Button('EXIT')]]
     return layout
 
-# change instantly 
 def get_word_search_layout(row, col, wordslist):
     words = '\n'.join(wordslist)
     layout = [
-        [sg.Graph((BOX_SIZE * row + 10, BOX_SIZE * col + 10), (0, BOX_SIZE * row + 10), (BOX_SIZE * col + 10, 0), background_color='white', key='_wsgraph_', enable_events=True, drag_submits=True), 
+        [sg.Graph((BOX_SIZE * row + 10, BOX_SIZE * col + 10), (0, BOX_SIZE * row + 10), (BOX_SIZE * col + 10, 0), background_color='white', key='-WSGRAPH-', enable_events=True, drag_submits=True), 
          sg.VerticalSeparator(),
-         sg.Text(words, key='_wslist_')],
-         # sg.Text('Hello')],
-         #[[sg.Text(h) for h in wordslist]]],
+         sg.Text(words, key='-WSLIST-')],
         [sg.Button('EXIT')]]
     return layout
 
 def get_word_ladder_gen_layout():
     layout = [[sg.Text('Select Difficulty Level')],
-              [sg.Combo(LEVELS, auto_size_text=True, default_value=LEVELS[0], enable_events=True, key='wllevel')],
+              [sg.Combo(LEVELS, auto_size_text=True, default_value=LEVELS[0], enable_events=True, key='-WLLEVEL-')],
               [sg.Button('SUBMIT')],
               [sg.Button('EXIT')]]
     return layout
 
-def get_word_ladder_layout():
+# 0 - 'Beginner'
+# 1 - 'Intermediate'
+# 2 - 'Advanced'
+# 3 - 'Master'
+# 7 Layers of input box with visible setting changes
+def get_word_ladder_layout(wordladdergenerator):
+    
     layout = [[sg.Text('Word ladder game play')],
-               [sg.Button('EXIT')]]
+              # [sg.Graph(())]
+              [sg.Text()],
+              [sg.InputText()]
+              [sg.Button('SOLUTION'), sg.Button('HINT'), sg.Button('NEXT'), sg.Button('EXIT')]]
     return layout
 
 def get_leaderboard_layout():
@@ -156,7 +163,7 @@ while True:
     event1, values1 = win1.read(timeout=100)
     print(event1, values1)
             
-    if event1 == sg.WIN_CLOSED or event1 == 'EXIT':
+    if event1 in (sg.WIN_CLOSED, 'EXIT'):
         break
 
     if not win2_active and event1 == 'WORD SEARCH':
@@ -176,16 +183,16 @@ while True:
     if win2_active:
         event2, values2 = win2.read(timeout=100)
                 
-        if event2 == sg.WIN_CLOSED or event2 == 'EXIT':                
+        if event2 in (sg.WIN_CLOSED, 'EXIT'):         
             win2_active  = False
             win2.close()
                     
         if not win3_active and event2 == 'SUBMIT':
             if wordsearch:
                 wordsearch_dictionary = {
-                    'lang': values2['wslanguage'],
-                    'category': values2['wscategory'],
-                    'grid_size': values2['wsgridsize']
+                    'lang': values2['-WSLANGUAGE-'],
+                    'category': values2['-WSCATEGORY-'],
+                    'grid_size': values2['-WSGRIDSIZE-']
                 }
                 grid = generate_word_search(wordsearch_dictionary)
                 wordslist = grid.get_word_list()
@@ -200,9 +207,12 @@ while True:
                     wordslist, englishwords = get_separted_wordslist(wordslist)
 
             if wordladder:
-                level = values2['wllevel']
-                win3_active = True
-                win3 = sg.Window('Word Ladder', get_word_ladder_layout())
+                level = values2['-WLLEVEL-']
+                wordladdergenerator = WordLadder(level)
+                wordladdergenerator.selectSourceTargetWords()
+                
+                win3_active = True                
+                win3 = sg.Window('Word Ladder', get_word_ladder_layout(wordladdergenerator))
 
             win2_active = False
             win2.close()
@@ -210,14 +220,18 @@ while True:
     if win3_active:
         event3, values3 = win3.read(timeout=3000)
 
-        if event3 == sg.WIN_CLOSED or event3 == 'EXIT':
+        if event3 in (sg.WIN_CLOSED, 'EXIT'):
             wordladder = False
             wordsearch = False
             win3_active = False
+            wordladdergenerator = None
             win3.close()
+            
+        if win3_active and 'NEXT' in event3:
+            pass
 
-        if win3_active and '_wsgraph_' in event3:
-            mouse = values3['_wsgraph_']
+        if win3_active and '-WSGRAPH-' in event3:
+            mouse = values3['-WSGRAPH-']
             if mouse == (None, None):
                 continue
             if firstchar == 0:
