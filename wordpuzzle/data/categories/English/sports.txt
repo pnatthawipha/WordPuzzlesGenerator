@@ -8,7 +8,7 @@ tennis
 skateboarding
 surfing
 hockey
-figure skating
+skating
 yoga
 fencing
 fitness
@@ -17,15 +17,17 @@ karate
 volleyball
 weightlifting
 basketball
+bowls
 baseball
 rugby
 wrestling
 high jumping
 hang gliding
 car racing
+canoeing
+handball
 cycling
 running
-table tennis
 fishing
 judo
 climbing
@@ -41,7 +43,11 @@ scuba diving
 water skiing
 skateboarding
 rock climbing
+polo
 mountain biking
 paragliding
 mountaineering
 bungee jumping
+darts
+diving
+rowing

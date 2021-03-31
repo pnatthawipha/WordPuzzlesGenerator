@@ -2,6 +2,7 @@ import networkx as nx
 import json
 import random
 import enchant
+from .twl import check
 from collections import defaultdict
 from itertools import product
 
@@ -17,29 +18,28 @@ class WordLadder :
     def __init__(self, level):
         self.level = level
         self.wordchars = LEVELS.get(level)
-        self.graph = self.load_graph(self.wordchars)
         self.wordslist = self.getWords(self.wordchars)
         self.paths = self.getPaths(self.wordchars)
         self.start = None
         self.end = None
-        self.currentpath = []
+        self.depth = None
+        self.wordcount = None
         self.currentstate = None
 
     def read_words_file(self):
         d = enchant.Dict('en_IE')
-        with open('C:\\Workarea\\GitHub\\WordPuzzleGenerator\\wordpuzzle\\data\\graphs\\allwords.txt') as file:
+        with open('C:\\Workarea\\GitHub\\WordPuzzlesGenerator\\wordpuzzle\\data\\graphs\\allwords.txt', 'r') as file:
             dictionary = set(file.read().split())
             words = defaultdict(list)
             
             for i in range(4): # 4-7
                 for word in dictionary:
-                    if i+4 == len(word) and d.check(word):
+                    if i+4 == len(word) and d.check(word) and check(word):
                         words[i+4].append(word)
             return words
                     
     def build_graph(self):
         words = self.read_words_file()
-        # graph = nx.Graph()
         
         for i in range(4):
             G = nx.Graph()
@@ -57,10 +57,9 @@ class WordLadder :
                     if word1 != word2:
                         G.add_edge(word1, word2)
             
-            # graph = nx.union(G, graph)
-            filename = 'C:\\Workarea\\GitHub\\WordPuzzleGenerator\\wordpuzzle\\data\\graphs\\graphs_' + str(i+4) + '.graphml'
+            filename = 'C:\\Workarea\\GitHub\\WordPuzzlesGenerator\\wordpuzzle\\data\\graphs\\graphs_' + str(i+4) + '.graphml'
             nx.write_graphml(G, filename)
-            file = 'C:\\Workarea\\GitHub\\WordPuzzleGenerator\\wordpuzzle\\data\\graphs\\usedwords' + str(i+4) + '.txt'
+            file = 'C:\\Workarea\\GitHub\\WordPuzzlesGenerator\\wordpuzzle\\data\\graphs\\usedwords' + str(i+4) + '.txt'
             f = open(file, 'w+')
             f.write("%s" % '\n'.join(list(G.nodes)))
             f.close()        
@@ -69,63 +68,79 @@ class WordLadder :
         for i in range(4,8):
             G = self.load_graph(i)
             paths = dict(nx.all_pairs_shortest_path(G, 6))
-            file = 'C:\\Workarea\\GitHub\\WordPuzzleGenerator\\wordpuzzle\\data\\graphs\\paths' + str(i) + '.json'
-            with open(file, 'w+') as json_file:
-                json.dump(paths, json_file)
+            with open('C:\\Users\\peung\\Desktop\\FYP\\src\\paths' + str(i) + '.json', 'w') as f:
+                json.dump(paths, f)
 
     def load_graph(self, wordchars):
-        file = 'C:\\Workarea\\GitHub\\WordPuzzleGenerator\\wordpuzzle\\data\\graphs\\graphs_' + str(wordchars) + '.graphml'
+        file = 'C:\\Workarea\\GitHub\\WordPuzzlesGenerator\\wordpuzzle\\data\\graphs\\graphs_' + str(wordchars) + '.graphml'
         graph = nx.read_graphml(file)
         return graph
 
     def getWords(self, wordchars):
-        file = 'C:\\Workarea\\GitHub\\WordPuzzleGenerator\\wordpuzzle\\data\\graphs\\usedwords' + str(wordchars) + '.txt'
-        with open(file) as file:
-            dictionary = file.read().split()
-        return dictionary
-    
+        file = 'C:\\Workarea\\GitHub\\WordPuzzlesGenerator\\wordpuzzle\\data\\graphs\\usedwords' + str(wordchars) + '.txt'
+        with open(file, 'r') as f:
+            return f.read().split()
+            
     def getPaths(self, wordchars):
-        file = 'C:\\Workarea\\GitHub\\WordPuzzleGenerator\\wordpuzzle\\data\\graphs\\paths' + str(wordchars) + '.json'
-        with open(file) as f:
-            data = json.load(f)
-        return data
-        
+        file = 'C:\\Users\\peung\\Desktop\\FYP\\src\\paths' + str(wordchars) + '.json'
+        with open(file, 'r') as f:
+            return json.load(f)
+
     def changeLevel(self, level):
-        self.level = level
-        self.wordchars = LEVELS.get(level)
-        self.graph = self.load_graph(self.wordchars)
-        self.wordslist = self.getWords(self.wordchars)
-        self.paths = self.getPaths(self.wordchars)
-        self.start = None
-        self.end = None
-        self.currentpath = []
-        self.currentstate = None
-    
+        if level not in self.level:
+            self.level = level
+            self.wordchars = LEVELS.get(level)
+            self.wordslist = self.getWords(self.wordchars)
+            self.paths = self.getPaths(self.wordchars)
+            self.start = None
+            self.end = None
+            self.depth = None
+            self.wordcount = None
+            self.currentstate = None
+
     def selectSourceTargetWords(self):
         found = False
         while not found:
             start = random.choice(self.wordslist)
             end = random.choice(self.wordslist)
-            if nx.has_path(self.graph, start, end) == True:
-                if nx.shortest_path_length(self.graph, start, end) <= 6:
-                    self.start = start
-                    self.end = end
-                    self.currentstate = start
-                    found = True
-                    self.currentpath = self.paths[start][end]
+            if start in self.paths[start]:
+                if end in self.paths[start]:
                     print(self.paths[start][end])
+                    length = len(self.paths[start][end])
+                    if length <= 7 and length > 2:
+                        self.start = start
+                        self.end = end
+                        self.currentstate = start
+                        self.depth = length-2
+                        self.wordcount = 1
+                        found = True
             
     def checkInput(self, word):
         d = enchant.Dict('en_IE')
         found = False
         isLast = False
-        if d.check(word):
-            if word in self.currentpath:
-                current = self.currentpath.index(self.currentstate)
-                newword = self.currentpath.index(word)
-                if newword - 1 == current:
+        if d.check(word) and check(word):
+            if word in self.paths[self.currentstate][word] and len(self.paths[self.currentstate][word]) == 2: 
+                if len(self.paths[word][self.end]) == 2:
                     self.currentstate = word
+                    self.wordcount += 1
                     found = True
-                    if newword + 1 == len(self.currentpath) - 1:
-                        isLast = True
+                    isLast = True
+                elif self.wordcount < self.depth + 1:
+                    self.currentstate = word
+                    self.wordcount += 1
+                    found = True               
         return found, isLast
+    
+    def getNextWord(self):
+        #try:
+        paths = self.paths[self.currentstate][self.end]
+        return paths[1]
+        #exception
+        #if word in self.paths[self.currentstate][self.end]:
+            
+    def getPath(self):
+        return self.paths[self.start][self.end]
+        
+                
+                

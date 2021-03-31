@@ -3,15 +3,20 @@ from .grid import Grid
 from .readdata import read_words_file, read_characters
 from collections import defaultdict
 
-GRID_SIZE = ['12x12', '15x15', '17x17', '20x20', '22x22', '25x25', '27x27', '30x30']
+GRID_SIZE = ['15x15', '17x17', '20x20', '22x22', '25x25', '27x27', '30x30']
 DIRECTIONS = ['ver-down', 'hor-left', 'di', 'ver-up', 'hor-right']
 DIAGONALS = ['di-left-down', 'di-right-down', 'di-left-up', 'di-right-up']
 
+wordsloc = []
+characters = []
+selectedwords = []
+
 def generate_word_search(wsdictionary):
+    wordsloc.clear()
     row = int(wsdictionary['grid_size'].split("x")[0])
     col = int(wsdictionary['grid_size'].split("x")[1])
-    print(wsdictionary['lang'], wsdictionary['category'])
-    selectedwords = generate_words(row, col, wsdictionary['lang'], wsdictionary['category'])
+    if not selectedwords:
+        generate_words(row, col, wsdictionary['lang'], wsdictionary['category'])
     characters = read_characters(wsdictionary['lang'])
     numofwords = calculate_words_in_grid(row)
     listofwords = random.sample(selectedwords, k=numofwords)
@@ -20,6 +25,7 @@ def generate_word_search(wsdictionary):
         matrix = generate_grid(row, col, listofwords, wsdictionary)
         matrix.fill_in_blanks(characters)
         matrix.add_word_list(listofwords)
+        selectedwords.clear()
         return matrix
     else:
         words = []
@@ -28,6 +34,7 @@ def generate_word_search(wsdictionary):
         matrix = generate_grid(row, col, words, wsdictionary)
         matrix.fill_in_blanks(characters)
         matrix.add_word_list(listofwords)
+        selected_words.clear()
         return matrix
 
 def random_directions():
@@ -78,7 +85,8 @@ def generate_grid(row, col, wordslist, wsdictionary):
         while not found:
             i, j, found = check_direction(words_with_directions[word][0], matrix, row, col, word)
             if found:
-                matrix.add_word(word, i, j, words_with_directions[word][0])
+                end_i, end_j = matrix.add_word(word, i, j, words_with_directions[word][0])
+                wordsloc.append((word,(i,j),(end_i,end_j)))
             else:
                 notfoundcount += 1
                 newdirection = random_directions()
@@ -86,24 +94,22 @@ def generate_grid(row, col, wordslist, wsdictionary):
                     words_with_directions[word][0] = newdirection
                 elif notfoundcount >= len(wordslist):
                     restart_grid(wsdictionary)
-                       
-        
     return matrix
 
 def generate_words(row, col, lang, category):
     english_words = read_words_file('English', category)
-    selected_words = []
     if lang == "English":
         for word in english_words:
             if len(word) < row and len(word) < col:
-                selected_words.append(word.upper())
+                selectedwords.append(word.upper())
     else:
         lang_words = read_words_file(lang, category)
         for word, eng_word in zip(lang_words, english_words):
             if len(word) < row and len(word) < col:
-                selected_words.append(word.upper() + "  -  " + eng_word.upper())
-
-    return selected_words
+                selectedwords.append(word.upper() + "  -  " + eng_word.upper())
 
 def calculate_words_in_grid(row):
     return row + int(row*0.2)
+
+def get_words_loc():
+    return wordsloc

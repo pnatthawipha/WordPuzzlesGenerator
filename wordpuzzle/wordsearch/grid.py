@@ -231,57 +231,56 @@ class Grid:
         for ch in word:
             self.matrix[i][j] = ch
             j += 1
-        return True
+        return i, j-1
     
     def add_hor_right(self, word, i, j):
         for ch in word:
             self.matrix[i][j] = ch
             j -= 1
-        return True
+        return i, j+1
     
     def add_ver_up(self, word, i, j):
         for ch in word:
             self.matrix[i][j] = ch
             i -= 1
-        return True
+        return i+1, j
             
     def add_ver_down(self, word, i, j):
         for ch in word:
             self.matrix[i][j] = ch
             i += 1
-        return True
+        return i-1, j
     
     def add_di_left_down(self, word, i, j):
         for ch in word:
             self.matrix[i][j] = ch
             i += 1
             j += 1
-        return True
+        return i-1, j-1
     
     def add_di_left_up(self, word, i, j):
         for ch in word:
             self.matrix[i][j] = ch
             i -= 1
             j += 1    
-        return True
+        return i+1, j-1
     
     def add_di_right_down(self, word, i, j):
         for ch in word:
             self.matrix[i][j] = ch
             i += 1
             j -= 1  
-        return True
+        return i-1, j+1
     
     def add_di_right_up(self, word, i, j): 
         for ch in word:
             self.matrix[i][j] = ch
             i -= 1
             j -= 1
-        return True
+        return i+1, j+1
         
     
     def execute_add_word(self, argument, word, i, j):
-        print(argument, i, j)
         switcher = {
             'hor-left':self.add_hor_left,
             'hor-right':self.add_hor_right,
@@ -295,4 +294,4 @@ class Grid:
         return switcher[argument](word, i, j)
 
     def add_word(self, word, i, j, direction):
-        self.execute_add_word(direction, word, i, j)
+        return self.execute_add_word(direction, word, i, j)
