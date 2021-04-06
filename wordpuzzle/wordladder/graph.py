@@ -1,7 +1,7 @@
 import networkx as nx
-import json
 import random
 import enchant
+import ujson
 from .twl import check
 from collections import defaultdict
 from itertools import product
@@ -62,14 +62,36 @@ class WordLadder :
             file = 'C:\\Workarea\\GitHub\\WordPuzzlesGenerator\\wordpuzzle\\data\\graphs\\usedwords' + str(i+4) + '.txt'
             f = open(file, 'w+')
             f.write("%s" % '\n'.join(list(G.nodes)))
-            f.close()        
-
-    def dumpToFile(self):
+            f.close()
+            
+    
+    def dumpToFile(self):    
         for i in range(4,8):
             G = self.load_graph(i)
             paths = dict(nx.all_pairs_shortest_path(G, 6))
-            with open('C:\\Users\\peung\\Desktop\\FYP\\src\\paths' + str(i) + '.json', 'w') as f:
-                json.dump(paths, f)
+            output = []
+
+            for word in paths:
+                for path in list(paths[word]):
+                    length = len(paths[word][path])
+                    if length <= 1:
+                        del paths[word][path]
+                    if word not in output:
+                        output.append(word)
+            for word in list(paths):
+                for path in list(paths[word]):
+                    if bool(paths[word][path]) == False:
+                        del paths[word][path]
+                if bool(paths[word]) == False:
+                    del paths[word]
+
+        with open('C:\\Users\\peung\\Desktop\\FYP\\src\\paths' + str(i) + '.json', 'w') as f:
+            ujson.dump(paths, f)
+        
+        file = 'C:\\Workarea\\GitHub\\WordPuzzlesGenerator\\wordpuzzle\\data\\graphs\\usedwords' + str(i+4) + '.txt'
+        f = open(file, 'w+')
+        f.write("%s" % '\n'.join(list(output)))
+        f.close()
 
     def load_graph(self, wordchars):
         file = 'C:\\Workarea\\GitHub\\WordPuzzlesGenerator\\wordpuzzle\\data\\graphs\\graphs_' + str(wordchars) + '.graphml'
@@ -83,8 +105,7 @@ class WordLadder :
             
     def getPaths(self, wordchars):
         file = 'C:\\Users\\peung\\Desktop\\FYP\\src\\paths' + str(wordchars) + '.json'
-        with open(file, 'r') as f:
-            return json.load(f)
+        return ujson.load(open(file))
 
     def changeLevel(self, level):
         if level not in self.level:
@@ -103,17 +124,16 @@ class WordLadder :
         while not found:
             start = random.choice(self.wordslist)
             end = random.choice(self.wordslist)
-            if start in self.paths[start]:
-                if end in self.paths[start]:
-                    print(self.paths[start][end])
-                    length = len(self.paths[start][end])
-                    if length <= 7 and length > 2:
-                        self.start = start
-                        self.end = end
-                        self.currentstate = start
-                        self.depth = length-2
-                        self.wordcount = 1
-                        found = True
+            # if start in self.paths[start]:
+            if end in self.paths[start]:
+                length = len(self.paths[start][end])
+                if length <= 7 and length > 3:
+                    self.start = start
+                    self.end = end
+                    self.currentstate = start
+                    self.depth = length-2
+                    self.wordcount = 1
+                    found = True
             
     def checkInput(self, word):
         d = enchant.Dict('en_IE')
@@ -132,12 +152,36 @@ class WordLadder :
                     found = True               
         return found, isLast
     
+    def reset(self):
+        self.currentstate = self.start
+        self.wordcount = 1
+    
     def getNextWord(self):
-        #try:
-        paths = self.paths[self.currentstate][self.end]
-        return paths[1]
-        #exception
-        #if word in self.paths[self.currentstate][self.end]:
+        try:
+            self.paths[self.currentstate][self.end]
+        except KeyError:
+            return None
+        else:
+            paths = self.paths[self.currentstate][self.end]
+            return paths[1]
+        
+    def checkPath(self, wordsdict):
+        for word, nextword in zip(wordsdict, wordsdict[1:]):
+            try:
+                self.paths[word][nextword]
+            except KeyError:
+                return False
+            else:
+                if nextword == self.end:
+                    return True
+        
+    def getSolWord(self, word):
+        d = enchant.Dict('en_IE')
+        if d.check(word) and check(word):
+            paths = self.paths[self.currentstate][word]
+            self.wordcount += 1
+            self.currentstate = paths[1]
+            return paths[1]
             
     def getPath(self):
         return self.paths[self.start][self.end]

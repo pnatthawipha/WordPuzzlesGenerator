@@ -1,47 +1,122 @@
-Mais
-Pilz
-Brokkoli
-Gurke
-rote Paprika
-Ananas
-Tomate
-Schwede
-Karotte
-Rosenkohl
-Kürbis
-Kohl
-Kartoffel
+Artischocke
 Aubergine
+Spargel
+Hülsenfrüchte
+Alfalfa Sprossen
+Azuki-Bohnen
+Bohnensprossen
+schwarze Bohnen
+Black Eyed Peas
+Borlottibohne
+Saubohnen
+Kichererbsen
+grüne Bohnen
+kidney-Bohnen
+Linsen
+Butterbohne
+Mungobohnen
+weiße Bohnen
+Erdnüsse
+Pintobohnen
+Prunkbohnen
+Spalterbsen
+Sojabohnen
+Erbsen
+Erbsen schnappen
+Brokkoflower
+Brokkoli
+Rosenkohl
+Kohl
+Kohlrabi
+Wirsing
+Rotkohl
+Blumenkohl
+Sellerie
+Endivie
+Fiddleheads
+Frisee
+Fenchel
+Grüns
+Bok Choy
+Mangold
+Collard Greens
+Grünkohl
+Senfgrün
+Spinat
+Kräuter
+Anis
+Basilikum
+Kümmel
+Koriander
+Kamille
+Daikon
+Dill
+Lavendel
+Zitronengras
+Majoran
+Oregano
+Petersilie
+Rosmarin
+Thymian
+Grüner Salat
+Rucola
+Pilze
+Brennnesseln
+Neuseeländischer Spinat
+Okra
+Schnittlauch
+Knoblauch
+Lauch
+Zwiebel
+Schalotte
+Frühlingszwiebel
+Pfeffer
+Paprika
+Chili-Pfeffer
+Jalapeno
+Habanero
+Paprika
+Tabasco-Pfeffer
+Cayenne Pfeffer
+Radicchio
+Rhabarber
+Rote Beete
+Karotte
+Sellerie
+Knollen
+Eddoe
+konjac
+Taro
+Wasserkastanie
+Ingwer
+Pastinake
+Steckrübe
+Rettich
+Wasabi
+Meerrettich
+Rettich
+Knollen
+Jicama
+Kartoffel
+Süßkartoffel
 Süßkartoffel
 Steckrübe
-Zucchini
-grünes Chilli
-Zwiebel
-Salat
-Rettich
-Erbse
-Spargel
-Sellerie
-grünes Pfeffer
-Französische Bohnen
 Spinat
-Rote Beete
-rote Chilischoten
-Bohne
-Koriander
-Artischocke
-Rosmarin
-Lorbeerblätter
-Minzblätter
-Basilikum
-Nelke
-Olive
-Schalotte
-Kurkuma
-Knoblauch
-Ingwer
-Zwiebel
-Frühlingszwiebeln
-Zitronengras
-Schnittlauch
-grüne Chilli
+Schwarzwurzeln
+skirret
+Mais
+Topinambur
+Eichelkürbis
+bittere Melone
+Butternusskürbis
+Bananenkürbis
+Zucchini
+Gurke
+Delikatessen
+Edelsteinkürbis
+Hubbard Squash
+Mark
+Spaghettikürbis
+tat soi
+Tomate
+Brunnenkresse

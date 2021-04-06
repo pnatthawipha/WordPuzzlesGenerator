@@ -11,3 +11,9 @@ def read_words_file(lang, category):
         dictionary = f.read().splitlines()
         f.close()
     return dictionary
+
+def read_input_file(file):
+    with open(file, encoding="utf-8") as f:
+        dictionary = f.read().upper().splitlines()
+        f.close()
+    return dictionary

@@ -6,26 +6,47 @@ verde
 nero
 Marrone
 azzurro
+bronzo
+abbronzatura
+malva
 avorio
+salmone
 verde acqua
 argento
+Mela verde
+turchese
 viola
+lavanda
+pesca
+rame
+rubino
+palissandro
+viola
+bisque
+Smeraldo
+giada
+indaco
+indianred
+ambra
 blu navy
 verde pisello
 grigio
 arancia
 marrone
 carbone
+beige
 acquamarina
 corallo
 fucsia
 Grano
 lime
 cremisi
+grigio
 cachi
 rosa caldo
+rosa
 magenta
-aureo
+d'oro
 prugna
 oliva
 ciano

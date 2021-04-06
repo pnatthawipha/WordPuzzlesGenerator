@@ -4,28 +4,49 @@ bleu
 rouge
 vert
 noir
-marron
+brun
 Azur
+bronze
+bronzer
+mauve
 Ivoire
+Saumon
 sarcelle
 argent
+Pomme verte
+turquoise
 violet
-bleu marin
+lavande
+pêche
+cuivre
+rubis
+bois de rose
+violet
+bisque
+émeraude
+jade
+indigo
+indianred
+ambre
+bleu marine
 vert pois
-gris
+grise
 Orange
 bordeaux
 charbon
+beige
 bleu vert
 corail
 fuchsia
-blé
-citron vert
+du blé
+chaux
 cramoisi
+gris
 kaki
 rose vif
+rose
 magenta
-doré
+d'or
 prune
 olive
 cyan

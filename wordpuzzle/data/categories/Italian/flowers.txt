@@ -2,37 +2,50 @@ tulipano
 narciso
 papavero
 girasole
-bluebell
+campanula
 rosa
 bucaneve
 fiore di ciliegio
+anemone
+fucsia
+camelia
+gazania
 orchidea
 iris
+petunia
+viola del pensiero
+zinnia
 peonia
+digitale
+gerbera
 crisantemo
+calendula
 geranio
 giglio
+nasturzio
+dalia
 loto
+ranuncolo
+aster
+heliconia
 Ninfea
+garofano
+ortensia
+ibisco
+pervinca
+gelsomino
+magnolia
 dente di leone
 giacinto
 margherita
 croco
+anthurium
 fiori di campo
+giglio di calla
 cardo
-fiore
-erba
-fungo
-erba
-felce
 tifa
 canna
 bambù
 edera
-arbusto
-muschio
-erba
-Palma
-cespuglio
-Mais
-albero
+clematide
+bouganville

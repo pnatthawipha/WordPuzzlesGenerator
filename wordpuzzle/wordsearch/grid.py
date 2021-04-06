@@ -43,9 +43,6 @@ class Grid:
 
     def add_word_list(self, wordslist):
         self.wordslist = wordslist
-
-    def add_words(self, word, i, j):
-        pass
     
     def check_avail_hor_right(self, row, col, word):
         word = list(word)

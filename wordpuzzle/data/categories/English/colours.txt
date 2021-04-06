@@ -6,24 +6,45 @@ green
 black
 brown
 azure
+bronze
+tan
+mauve
 ivory
+salmon
 teal
 silver
+applegreen
+turquoise
+violet
+lavender
+peach
+copper
+ruby
+rosewood
 purple
+bisque
+emerald
+jade
+indigo
+indianred
+amber
 navy blue
 pea green
 gray
 orange
 maroon
 charcoal
+beige
 aquamarine
 coral
 fuchsia
 wheat
 lime
 crimson
+grey
 khaki
 hot pink
+pink
 magenta
 golden
 plum

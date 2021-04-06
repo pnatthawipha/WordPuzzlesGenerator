@@ -1,47 +1,123 @@
-corn
-mushroom
-broccoli
-cucumber
-red pepper
-pineapple
-tomato
-swede
-carrot
-brussels sprout
-pumpkin
-cabbage
-potato
-eggplant
-sweet potato
-turnip
-courgette
-green chilli
-onion
-lettuce
-radish
-pea
-asparagus
-celery
-green pepper
-french beans
-spinach
-beetroot
-red chillies
-bean
-coriander
 artichoke
-rosemary
-bay leaves
-mint leaves
+aubergine
+asparagus
+legumes
+alfalfa sprouts
+azuki beans
+bean sprouts
+black beans
+black-eyed peas
+borlotti bean
+broad beans
+chickpeas
+green beans
+kidney beans
+lentils
+butter bean
+mung beans
+navy beans
+peanuts
+pinto beans
+runner beans
+split peas
+soy beans
+peas
+snap peas
+broccoflower
+broccoli
+brussels sprouts
+cabbage
+kohlrabi
+Savoy cabbage
+red cabbage
+cauliflower
+celery
+endive
+fiddleheads
+frisee
+fennel
+greens
+bok choy
+chard
+collard greens
+kale
+mustard greens
+spinach
+herbs
+anise
 basil
-clove
-olive
-shallot
-turmeric
-garlic
-ginger
-onion
-spring onions
+caraway
+coriander
+chamomile
+daikon
+dill
+lavender
 lemongrass
+marjoram
+oregano
+parsley
+rosemary
+thyme
+lettuce
+arugula
+mushrooms
+nettles
+New Zealand spinach
+okra
 chives
-green chili
+garlic
+leek
+onion
+shallot
+scallion (spring onion UK, green onion US)
+spring onion
+peppers
+bell pepper
+chili pepper
+jalapeño
+habanero
+paprika
+tabasco pepper
+cayenne pepper
+radicchio
+rhubarb
+beetroot
+carrot
+celeriac
+corms
+eddoe
+konjac
+taro
+water chestnut
+ginger
+parsnip
+rutabaga
+radish
+wasabi
+horseradish
+white radish
+tubers
+jicama
+potato
+sweet potato
+yam
+turnip
+spinach
+salsify
+skirret
+sweetcorn
+topinambur
+acorn squash
+bitter melon
+butternut squash
+banana squash
+courgette
+cucumber
+delicata
+gem squash
+hubbard squash
+marrow
+spaghetti squash
+tat soi
+tomato
+watercress

@@ -1,28 +1,120 @@
+Abiu
+Acerola
+Ackee
 Apfel
-Wassermelone
-Orange
-Birne
-Kirsche
-Erdbeere
-Nektarine
-Traube
-Mango
-Blaubeere
-Granatapfel
-Karambola
-Pflaume
-Banane
-Himbeere
-Mandarin
-Jackfrucht
-Papaya
-Kiwi
-Ananas
-Limette
-Zitrone
 Aprikose
-Grapefruit
-Melone
-Kokosnuss
 Avocado
+Banane
+Heidelbeere
+Brombeere
+Schwarze Johannisbeere
+Schwarzer Sapote
+Blaubeere
+Boysenberry
+Brotfrucht
+Kaktusbirne
+Canistel
+Cempedak
+Zierapfel
+Johannisbeere
+Kirsche
+Cherimoya
+Chico-Frucht
+Moltebeere
+Coco De Mer
+Kokosnuss
+Cranberry
+Damson
+Datum
+Drachenfrucht
+Durian
+Eierfrucht
+Holunder
+Feijoa
+Feige
+Goji-Beeren
+Stachelbeere
+Traube
+Rosine
+Grapefruit
+Guave
+Hala-Frucht
+Honigbeere
+Heidelbeere
+Jabuticaba
+Jackfrucht
+Jambul
+Japanische Pflaume
+Jostaberry
+Jujube
+Wacholderbeere
+Kaffir Limette
+Kiwano
+Kiwi
+Kumquat
+Zitrone
+Kalk
+Loganbeere
+Wollmispel
+Longan
+Lulo
+Litschi
+Magellan Berberitze
+Mamey Apple
+Mamey Sapote
+Mango
+Mangostan
+Marionberry
+Melone
+Cantaloup-Melone
+Galia Melone
+Honigtau
+Mausmelone
+Wassermelone
+Wunderfrucht
+Monstera deliciosa
+Maulbeere
+Nance
+Nektarine
+Orange
+Blutorange
+Clementine
+Mandarine
+Mandarine
+Papaya
+Passionsfrucht
 Pfirsich
+Birne
+Persimmon
+Wegerich
+Pflaume
+Pflaume
+Ananas
+Pineberry
+Plumcot
+Granatapfel
+Pampelmuse
+Lila Mangostan
+Quitte
+Himbeere
+Lachsbeere
+Rambutan
+Rote Johannisbeere
+Rosenapfel
+Salal Beere
+Salak
+Satsuma
+Soursop
+Sternenapfel
+Sternfrucht
+Erdbeere
+Surinam Kirsche
+Tamarillo
+Tamarinde
+Tangelo
+Tayberry
+Tomate
+Häßliche Frucht
+Weiße Johannisbeere
+Weißer Sapote
+Yuzu

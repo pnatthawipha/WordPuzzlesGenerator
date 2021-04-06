@@ -1,28 +1,120 @@
-apple
-watermelon
-orange
-pear
-cherry
-strawberry
-nectarine
-grape
-mango
-blueberry
-pomegranate
-carambola
-plum
-banana
-raspberry
-mandarin
-jackfruit
-papaya
-kiwi
-pineapple
-lime
-lemon
-apricot
-grapefruit
-melon
-coconut
-avocado
-peach
+Abiu
+Acerola
+Ackee
+Apple
+Apricot
+Avocado
+Banana
+Bilberry
+Blackberry
+Blackcurrant
+Black sapote
+Blueberry
+Boysenberry
+Breadfruit
+Cactus pear
+Canistel
+Cempedak
+Crab apple
+Currant
+Cherry
+Cherimoya
+Chico fruit
+Cloudberry
+Coco De Mer
+Coconut
+Cranberry
+Damson
+Date
+Dragonfruit
+Durian
+Egg Fruit
+Elderberry
+Feijoa
+Fig
+Goji berry
+Gooseberry
+Grape
+Raisin
+Grapefruit
+Guava
+Hala Fruit
+Honeyberry
+Huckleberry
+Jabuticaba
+Jackfruit
+Jambul
+Japanese plum
+Jostaberry
+Jujube
+Juniper berry
+Kaffir Lime
+Kiwano
+Kiwifruit
+Kumquat
+Lemon
+Lime
+Loganberry
+Loquat
+Longan
+Lulo
+Lychee
+Magellan Barberry
+Mamey Apple
+Mamey Sapote
+Mango
+Mangosteen
+Marionberry
+Melon
+Cantaloupe
+Galia melon
+Honeydew
+Mouse Melon
+Watermelon
+Miracle fruit
+Monstera deliciosa
+Mulberry
+Nance
+Nectarine
+Orange
+Blood orange
+Clementine
+Mandarine
+Tangerine
+Papaya
+Passionfruit
+Peach
+Pear
+Persimmon
+Plantain
+Plum
+Prune
+Pineapple
+Pineberry
+Plumcot
+Pomegranate
+Pomelo
+Purple mangosteen
+Quince
+Raspberry
+Salmonberry
+Rambutan
+Redcurrant
+Rose apple
+Salal berry
+Salak
+Satsuma
+Soursop
+Star apple
+Star fruit
+Strawberry
+Surinam cherry
+Tamarillo
+Tamarind
+Tangelo
+Tayberry
+Tomato
+Ugli fruit
+White currant
+White sapote
+Yuzu

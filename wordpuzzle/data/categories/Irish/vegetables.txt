@@ -1,47 +1,122 @@
-arbhar
-beacán
-brocailí
-cúcamar
-piobar dearg
-anann
-trátaí
-swede
-cairéad
-sprout brící
-pumpkin
-cabáiste
-prátaí
-ubhthoradh
-práta milis
-tornapa
-cúiréireachta
-chilli glas
-oinniún
-leitís
-raidis
-pea
-asparagus
-soilire
-piobar glas
-pónairí french
-spionáiste
-biatas
-cillí dearga
-pónaire
-coriander
 bliosán gréine
-Rosemary
-duilleoga bhá
-duilleoga mint
+aubergine
+asparagus
+pischineálaigh
+sprouts alfalfa
+pónairí azuki
+sprouts bean
+pónairí dubha
+piseanna le súile dubha
+bean borlotti
+pónairí leathana
+chickpeas
+pónairí glasa
+pónairí duáin
+lintilí
+bean ime
+pónairí mung
+pónairí navy
+peanuts
+pónairí pinto
+pónairí rádala
+piseanna scoilte
+pónairí soighe
+piseanna
+snap piseanna
+brocailí
+brocailí
+bachlóga Bruiséile
+cabáiste
+kohlrabi
+Cabáiste Savoy
+cabáiste dearg
+cóilis
+soilire
+endive
+cinn fidil
+frisee
+finéal
+greens
+Bok choy
+chard
+Greens collard
+cál
+greens mustaird
+spionáiste
+luibheanna
+ainíse
 basil
-clove
-olóige
-shallot
-turmeric
-gairleog
-sinséar
-oinniún
-oinniúin earraigh
+caraway
+coriander
+chamomile
+daikon
+dill
+lavender
 lemongrass
+marjoram
+oregano
+peirsil
+Rosemary
+thyme
+leitís
+arugula
+beacáin
+neantóga
+Spionáiste Nua-Shéalainn
+okra
 síobhais
-chili glas
+gairleog
+leiceann
+oinniún
+shallot
+oinniún earraigh
+piobair
+clog piobar
+piobar chili
+jalapeño
+habanero
+paprika
+piobar tabasco
+piobar cayenne
+radicchio
+biabhóg
+biatas
+cairéad
+celeriac
+corms
+eddoe
+konjac
+taro
+castán uisce
+sinséar
+parsnip
+rutabaga
+raidis
+wasabi
+horseradish
+raidis bhán
+tiúbair
+jicama
+prátaí
+práta milis
+yam
+tornapa
+spionáiste
+salsify
+skirret
+sweetcorn
+topinambur
+scuais dearcáin
+melon searbh
+pumpcín imchnó
+scuais banana
+cúiréireachta
+cúcamar
+delicata
+squash gem
+squash hubbard
+smior
+scuaise spaghetti
+tat soi
+trátaí
+uisce beatha
