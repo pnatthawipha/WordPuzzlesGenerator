@@ -1,0 +1,4 @@
+ujson==4.0.2
+PySimpleGUI==4.34.0
+networkx==2.5
+pyenchant==3.2.0
