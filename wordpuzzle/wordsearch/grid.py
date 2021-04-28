@@ -14,19 +14,12 @@ class Grid:
             for j in range(self.col):
                 print(self.matrix[i][j], end=" ")
             print()
-
-    def fill_in_blanks(self):
-        for i in range(self.row):
-            for j in range(self.col):
-                if self.matrix[i][j] in '0.0':
-                    self.matrix[i][j] = '-'
-        return self.matrix
     
     def fill_in_blanks(self, characters):
         for i in range(self.row):
             for j in range(self.col):
                 if self.matrix[i][j] in '0.0':
-                    self.matrix[i][j] = random.choice(characters)
+                    self.matrix[i][j] = '-' #random.choice(characters)
         return self.matrix
     
     def get(self, i, j):
@@ -44,13 +37,13 @@ class Grid:
     def add_word_list(self, wordslist):
         self.wordslist = wordslist
     
-    def check_avail_hor_right(self, row, col, word):
+    def check_avail_hor_right(self, word):
         word = list(word)
         
         notfoundcount = 0
         while not False:
-            i = random.randint(0, row-1)
-            j = random.randint(len(word)-1, col-1)
+            i = random.randint(0, self.row-1)
+            j = random.randint(len(word)-1, self.col-1)
             ti, tj = i, j
             for k in range(len(word)):
                 if '0.0' in self.matrix[i][j] or (word[k] == self.matrix[i][j]):
@@ -59,17 +52,17 @@ class Grid:
                         return ti, tj, True
                 else:
                     notfoundcount += 1
-                    if notfoundcount >= max(row, col):
+                    if notfoundcount >= max(self.row, self.col):
                         return ti, tj, False
                     break
 
-    def check_avail_hor_left(self, row, col, word):
+    def check_avail_hor_left(self, word):
         word = list(word)
         
         notfoundcount = 0
         while not False:
-            i = random.randint(0, row-1)
-            j = random.randint(0, col-len(word)-1)
+            i = random.randint(0, self.row-1)
+            j = random.randint(0, self.col-len(word)-1)
             ti, tj = i, j
             for k in range(len(word)):
                 if '0.0' in self.matrix[i][j] or (word[k] == self.matrix[i][j]):
@@ -78,17 +71,17 @@ class Grid:
                         return ti, tj, True
                 else:
                     notfoundcount += 1
-                    if notfoundcount >= max(row, col):
+                    if notfoundcount >= max(self.row, self.col):
                         return ti, tj, False
                     break
         
-    def check_avail_ver_up(self, row, col, word):
+    def check_avail_ver_up(self, word):
         word = list(word)
         
         notfoundcount = 0
         while not False:
-            i = random.randint(len(word)-1, row-1)
-            j = random.randint(0, col-1)
+            i = random.randint(len(word)-1, self.row-1)
+            j = random.randint(0, self.col-1)
             ti, tj = i, j
             for k in range(len(word)):
                 if '0.0' in self.matrix[i][j] or (word[k] == self.matrix[i][j]):
@@ -97,17 +90,17 @@ class Grid:
                         return ti, tj, True
                 else:
                     notfoundcount += 1
-                    if notfoundcount >= max(row, col):
+                    if notfoundcount >= max(self.row, self.col):
                         return ti, tj, False
                     break
 
-    def check_avail_ver_down(self, row, col, word):
+    def check_avail_ver_down(self, word):
         word = list(word)
         
         notfoundcount = 0
         while not False:
-            i = random.randint(0, row-len(word)-1)
-            j = random.randint(0, col-1)
+            i = random.randint(0, self.row-len(word)-1)
+            j = random.randint(0, self.col-1)
             ti, tj = i, j
             for k in range(len(word)):
                 if '0.0' in self.matrix[i][j] or (word[k] == self.matrix[i][j]):
@@ -116,7 +109,7 @@ class Grid:
                         return ti, tj, True
                 else:
                     notfoundcount += 1
-                    if notfoundcount >= max(row, col):
+                    if notfoundcount >= max(self.row, self.col):
                         return ti, tj, False
                     break
 
@@ -276,8 +269,7 @@ class Grid:
             j -= 1
         return i+1, j+1
         
-    
-    def execute_add_word(self, argument, word, i, j):
+    def execute_add_word(self, direction, word, i, j):
         switcher = {
             'hor-left':self.add_hor_left,
             'hor-right':self.add_hor_right,
@@ -288,7 +280,7 @@ class Grid:
             'di-right-down':self.add_di_right_down,
             'di-right-up':self.add_di_right_up
         }
-        return switcher[argument](word, i, j)
+        return switcher[direction](word, i, j)
 
     def add_word(self, word, i, j, direction):
         return self.execute_add_word(direction, word, i, j)
