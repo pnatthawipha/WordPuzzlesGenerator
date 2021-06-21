@@ -1,1 +1,1 @@
-# WordPuzzlesGenerator
+# Word Puzzle Generator
